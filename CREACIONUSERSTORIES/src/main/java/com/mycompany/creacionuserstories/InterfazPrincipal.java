@@ -1,5 +1,6 @@
 package com.mycompany.creacionuserstories;
 
+import com.mycompany.creacionuserstories.crearhistoriasusuario.InterfazCrearHistoriaUsuario;
 import com.mycompany.creacionuserstories.crearproblemas.InterfazCrearProblemas;
 import com.mycompany.creacionuserstories.verproblemas.InterfazVerProblemas;
 import java.awt.BorderLayout;
@@ -19,6 +20,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         botonVerProblemas = new javax.swing.JButton();
         panelMostrar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        botonCrearHistoriaUsuario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,8 +56,15 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             .addGroup(panelMostrarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
+
+        botonCrearHistoriaUsuario.setText("CREAR USER HISTORY");
+        botonCrearHistoriaUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCrearHistoriaUsuarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,7 +78,8 @@ public class InterfazPrincipal extends javax.swing.JFrame {
                         .addComponent(botonCrearProblemas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonVerProblemas)
-                        .addGap(0, 265, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                        .addComponent(botonCrearHistoriaUsuario)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -78,8 +88,9 @@ public class InterfazPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonCrearProblemas)
-                    .addComponent(botonVerProblemas))
-                .addGap(18, 18, 18)
+                    .addComponent(botonVerProblemas)
+                    .addComponent(botonCrearHistoriaUsuario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -98,6 +109,12 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         InterfazVerProblemas panelverproblemas = new InterfazVerProblemas();
         navegacionPaneles(panelverproblemas);
     }//GEN-LAST:event_botonVerProblemasActionPerformed
+
+    private void botonCrearHistoriaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearHistoriaUsuarioActionPerformed
+        // TODO add your handling code here:
+        InterfazCrearHistoriaUsuario panelcrearus = new InterfazCrearHistoriaUsuario();
+        navegacionPaneles(panelcrearus);
+    }//GEN-LAST:event_botonCrearHistoriaUsuarioActionPerformed
     //Metodo para navegar entre paneles
     private void navegacionPaneles(JPanel p){
         panelMostrar.removeAll();
@@ -140,6 +157,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonCrearHistoriaUsuario;
     private javax.swing.JButton botonCrearProblemas;
     private javax.swing.JButton botonVerProblemas;
     private javax.swing.JLabel jLabel1;
