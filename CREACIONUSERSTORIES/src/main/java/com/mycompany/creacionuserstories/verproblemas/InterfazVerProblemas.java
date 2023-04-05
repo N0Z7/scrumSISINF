@@ -4,22 +4,6 @@
  */
 package com.mycompany.creacionuserstories.verproblemas;
 
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import com.google.cloud.firestore.CollectionReference;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.SetOptions;
-import com.google.firebase.cloud.FirestoreClient;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-
 /**
  *
  * @author HP
@@ -45,8 +29,6 @@ public class InterfazVerProblemas extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaTareas = new javax.swing.JTable();
 
-        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         jButton1.setText("Cargar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +48,13 @@ public class InterfazVerProblemas extends javax.swing.JPanel {
             }
         ));
         jScrollPane1.setViewportView(tablaTareas);
+        if (tablaTareas.getColumnModel().getColumnCount() > 0) {
+            tablaTareas.getColumnModel().getColumn(0).setHeaderValue("Id");
+            tablaTareas.getColumnModel().getColumn(1).setHeaderValue("Titulo");
+            tablaTareas.getColumnModel().getColumn(2).setHeaderValue("Descripcion");
+            tablaTareas.getColumnModel().getColumn(3).setHeaderValue("FechaCreacion");
+            tablaTareas.getColumnModel().getColumn(4).setHeaderValue("FechaEntrega");
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -74,15 +63,14 @@ public class InterfazVerProblemas extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
