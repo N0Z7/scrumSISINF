@@ -56,10 +56,10 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             .addGroup(panelMostrarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(239, Short.MAX_VALUE))
+                .addContainerGap(294, Short.MAX_VALUE))
         );
 
-        botonCrearHistoriaUsuario.setText("CREAR USER HISTORY");
+        botonCrearHistoriaUsuario.setText("CREAR HISTORIAS DE USUARIO");
         botonCrearHistoriaUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonCrearHistoriaUsuarioActionPerformed(evt);
@@ -78,7 +78,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
                         .addComponent(botonCrearProblemas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonVerProblemas)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                         .addComponent(botonCrearHistoriaUsuario)))
                 .addContainerGap())
         );
