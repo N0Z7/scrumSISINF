@@ -1,5 +1,6 @@
 package com.mycompany.creacionuserstories;
 
+import com.mycompany.creacionuserstories.Calificar.Calif;
 import com.mycompany.creacionuserstories.crearproblemas.InterfazCrearProblemas;
 import com.mycompany.creacionuserstories.verNotasDocente.InterfazVerNotas;
 import com.mycompany.creacionuserstories.verproblemas.InterfazVerProblemas;
@@ -22,6 +23,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         panelMostrar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         botonVerNotas = new javax.swing.JButton();
+        botonCalificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -57,13 +59,20 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             .addGroup(panelMostrarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(304, Short.MAX_VALUE))
+                .addContainerGap(316, Short.MAX_VALUE))
         );
 
         botonVerNotas.setText("VER NOTAS");
         botonVerNotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVerNotasActionPerformed(evt);
+            }
+        });
+
+        botonCalificar.setText("CALIFICAR");
+        botonCalificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCalificarActionPerformed(evt);
             }
         });
 
@@ -74,16 +83,17 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(panelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                    .addComponent(panelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(botonCrearProblemas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonVerProblemas)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonCalificar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonVerNotas)
-                        .addGap(39, 39, 39))))
+                        .addGap(0, 82, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,8 +102,9 @@ public class InterfazPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonCrearProblemas)
                     .addComponent(botonVerProblemas)
-                    .addComponent(botonVerNotas))
-                .addGap(18, 18, 18)
+                    .addComponent(botonVerNotas)
+                    .addComponent(botonCalificar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -118,6 +129,11 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         InterfazVerNotas panelVerNotas = new InterfazVerNotas();
         navegacionPaneles(panelVerNotas);
     }//GEN-LAST:event_botonVerNotasActionPerformed
+
+    private void botonCalificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCalificarActionPerformed
+        Calif calificar = new Calif();
+        navegacionPaneles(calificar);
+    }//GEN-LAST:event_botonCalificarActionPerformed
     //Metodo para navegar entre paneles
     private void navegacionPaneles(JPanel p){
         panelMostrar.removeAll();
@@ -160,6 +176,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonCalificar;
     private javax.swing.JButton botonCrearProblemas;
     private javax.swing.JButton botonVerNotas;
     private javax.swing.JButton botonVerProblemas;

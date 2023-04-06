@@ -5,6 +5,7 @@
 package com.mycompany.creacionuserstories;
 
 import com.mycompany.creacionuserstories.crearhistoriasusuario.InterfazCrearHistoriaUsuario;
+import com.mycompany.creacionuserstories.verNotasDocente.InterfazVerNotas;
 import com.mycompany.creacionuserstories.verproblemas.InterfazVerProblemas;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -36,6 +37,7 @@ public class InterfazEstudiante extends javax.swing.JFrame {
         contenido = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         botonVerPro = new javax.swing.JButton();
+        botonVernotas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -70,6 +72,13 @@ public class InterfazEstudiante extends javax.swing.JFrame {
             }
         });
 
+        botonVernotas.setText("VER NOTAS");
+        botonVernotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVernotasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,7 +91,9 @@ public class InterfazEstudiante extends javax.swing.JFrame {
                         .addComponent(botonCrearUser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(botonVerPro, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 302, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botonVernotas, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 145, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -91,7 +102,9 @@ public class InterfazEstudiante extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonCrearUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonVerPro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(botonVerPro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonVernotas)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -109,6 +122,11 @@ public class InterfazEstudiante extends javax.swing.JFrame {
         InterfazVerProblemas panelverproblemas = new InterfazVerProblemas();
         navegacionPaneles(panelverproblemas);
     }//GEN-LAST:event_botonVerProActionPerformed
+
+    private void botonVernotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVernotasActionPerformed
+        InterfazVerNotas panelVerNotas = new InterfazVerNotas();
+        navegacionPaneles(panelVerNotas);
+    }//GEN-LAST:event_botonVernotasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,6 +175,7 @@ public class InterfazEstudiante extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonCrearUser;
     private javax.swing.JButton botonVerPro;
+    private javax.swing.JButton botonVernotas;
     private javax.swing.JPanel contenido;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
