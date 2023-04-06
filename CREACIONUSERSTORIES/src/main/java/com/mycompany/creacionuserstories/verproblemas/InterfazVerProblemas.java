@@ -44,17 +44,10 @@ public class InterfazVerProblemas extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Id", "Titulo", "Descripcion", "FechaCreacion", "FechaEntrega"
+                "Id Tarea", "Titulo", "Descripcion", "FechaCreacion", "FechaEntrega"
             }
         ));
         jScrollPane1.setViewportView(tablaTareas);
-        if (tablaTareas.getColumnModel().getColumnCount() > 0) {
-            tablaTareas.getColumnModel().getColumn(0).setHeaderValue("Id");
-            tablaTareas.getColumnModel().getColumn(1).setHeaderValue("Titulo");
-            tablaTareas.getColumnModel().getColumn(2).setHeaderValue("Descripcion");
-            tablaTareas.getColumnModel().getColumn(3).setHeaderValue("FechaCreacion");
-            tablaTareas.getColumnModel().getColumn(4).setHeaderValue("FechaEntrega");
-        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -5,6 +5,7 @@
 package com.mycompany.creacionuserstories;
 
 import com.mycompany.creacionuserstories.crearhistoriasusuario.InterfazCrearHistoriaUsuario;
+import com.mycompany.creacionuserstories.verproblemas.InterfazVerProblemas;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
@@ -31,16 +32,17 @@ public class InterfazEstudiante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        botonCrearUser = new javax.swing.JButton();
         contenido = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        botonVerPro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jButton1.setText("CREAR USER STORY");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonCrearUser.setText("CREAR USER STORY");
+        botonCrearUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonCrearUserActionPerformed(evt);
             }
         });
 
@@ -58,8 +60,15 @@ public class InterfazEstudiante extends javax.swing.JFrame {
             contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenidoLayout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 333, Short.MAX_VALUE))
+                .addGap(0, 364, Short.MAX_VALUE))
         );
+
+        botonVerPro.setText("VER PROBLEMAS");
+        botonVerPro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVerProActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,27 +76,39 @@ public class InterfazEstudiante extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(422, Short.MAX_VALUE))
-            .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(botonCrearUser)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botonVerPro, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 302, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botonCrearUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonVerPro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearUserActionPerformed
         InterfazCrearHistoriaUsuario panelcrearus = new InterfazCrearHistoriaUsuario();
         navegacionPaneles(panelcrearus);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonCrearUserActionPerformed
+
+    private void botonVerProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerProActionPerformed
+        InterfazVerProblemas panelverproblemas = new InterfazVerProblemas();
+        navegacionPaneles(panelverproblemas);
+    }//GEN-LAST:event_botonVerProActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,8 +155,9 @@ public class InterfazEstudiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonCrearUser;
+    private javax.swing.JButton botonVerPro;
     private javax.swing.JPanel contenido;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
